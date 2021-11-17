@@ -1,0 +1,43 @@
+apply plugin: 'java'
+
+version = datapack_version
+archivesBaseName = datapack_name
+
+repositories {
+    
+    maven { 
+    
+        name 'Official Forge Maven'
+        url 'https://maven.minecraftforge.net'
+    }
+    
+    mavenCentral()
+}
+    
+dependencies {
+
+    implementation('net.minecraftforge:javafmllanguage:1.17.1-37.0.109') {
+        transitive = false
+    }
+}
+
+processResources {
+
+    
+    filesMatching('**/**') {
+    
+        expand project.properties
+    }
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+task generateSources(type: Copy) {
+    from 'src/forge/'
+    into "$buildDir/generated-src"
+    
+    filter(ReplaceTokens, tokens: [PACK_ID : datapack_id])
+}
+
+compileJava.source "$buildDir/generated-src"
+compileJava.dependsOn generateSources

@@ -1,0 +1,14 @@
+modLoader="javafml"
+loaderVersion="[1,]"
+license="${datapack_license}"
+
+[[mods]]
+modId="${datapack_id}"
+version="${version}"
+displayName="${datapack_name}"
+displayURL="${datapack_homepage}"
+credits="${datapack_authors}"
+authors="${datapack_authors}"
+description='''
+${datapack_description}
+'''

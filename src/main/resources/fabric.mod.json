@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "${datapack_id}",
+  "version": "${datapack_version}",
+  "name": "${datapack_name}",
+  "description": "${datapack_description}",
+  "authors": ["${datapack_authors}"],
+  "contact": {
+    "homepage": "${datapack_homepage}"
+  },
+  "license": "${datapack_license}",
+  "environment": "*"
+}
